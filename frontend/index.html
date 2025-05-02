@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MOTA</title>
+    <!--chart.js ekledım haftalık grafık ıcın-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <body>
+    <button id="menu-toggle">☰</button>
+
+    <div id="side-menu" class="hidden">
+      <ul>
+        <li id="menu-home">🏠 Ana Sayfa</li>
+        <li id="menu-calendar">📅 Takvim</li>
+        <li id="menu-category">🗂️ Kategoriler</li>
+        <li id="menu-darkmode">🌙 Karanlık Tema</li>
+      </ul>
+    </div>
+    
+    <h1>MOTA</h1>
+    <div id="sidebar">
+        
+      <form id="mota-form">
+        
+        <div id="filters">
+          <input type="text" id="searchInput" placeholder="Alışkanlık ara" />
+        </div>
+        
+        <select id="categoryFilter">
+          <option value="">Tüm Kategoriler</option>
+          <option value="Spor">Spor</option>
+          <option value="Ders">Ders</option>
+          <option value="Kişisel">Kişisel</option>
+          <option value="Sağlık">Sağlık</option>
+          <option value="Hobi">Hobi</option>
+        </select>
+        <input
+        
+          type="text"
+          id="mota-input"
+          placeholder="Bir Alışkanlık Ekle"
+          
+          required
+        />
+        <button type="submit"  id="habit-add-button">Ekle</button>
+        
+      </form>
+      </div>
+
+      
+    <div id="main-container">
+      
+      <ul id="habit-list"></ul>
+
+    
+        <div class="chart-container">
+          <div id="habit-card">
+            <canvas id="weeklyReportChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="calendar-section" class="hidden">
+      <h2>Takvim Görünümü</h2>
+      <div id="calendar-container"></div>
+    
+      <div id="calendar-chart-container" class="chart-container">
+        <canvas id="calendarChart"></canvas>
+      </div>
+    </div>
+    
+
+    <div id="category-section" class="hidden">
+      <h2>Kategorilere Göre Alışkanlıklar</h2>
+      <select id="categoryFilterDropdown">
+        <option value="">Tüm Kategoriler</option>
+        <option value="Spor">Spor</option>
+        <option value="Ders">Ders</option>
+        <option value="Kişisel">Kişisel</option>
+        <option value="Sağlık">Sağlık</option>
+        <option value="Hobi">Hobi</option>
+      </select>
+      <ul id="category-habit-list"></ul>
+      <div id="category-chart-container" class="chart-container">
+        <canvas id="categoryChart"></canvas>
+      </div>
+    </div>
+    
+
+    <div id="habit-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <h3 id="modal-title">Günlük Alışkanlıklar</h3>
+        <ul id="modal-habit-list"></ul>
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
